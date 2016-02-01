@@ -1,10 +1,10 @@
-module Api
-  class UsersController < ApplicationController
+class Api::UsersController < ApiController
 
-    def index
-      head :ok
-    end
+   before_action :authenticated?
 
+   def index
+     users = User.all
+     render json: users, each_serializer: UserSerializer
+   end
 
-  end
-end
+ end
