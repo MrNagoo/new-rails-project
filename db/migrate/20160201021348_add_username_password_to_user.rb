@@ -3,4 +3,4 @@ class AddUsernamePasswordToUser < ActiveRecord::Migration
     add_column :users, :username, :string
     add_column :users, :password, :string
   end
-end
+end 
